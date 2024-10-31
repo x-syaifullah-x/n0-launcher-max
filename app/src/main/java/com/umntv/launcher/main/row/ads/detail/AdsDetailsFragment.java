@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,7 @@ import com.umntv.launcher.base.CardVisitor;
 import com.umntv.launcher.main.MainActivity;
 import com.umntv.launcher.main.row.ads.Ads;
 import com.umntv.launcher.main.row.ads.AdsCard;
+import com.umntv.launcher.util.Admob;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -55,6 +57,13 @@ public class AdsDetailsFragment extends DetailsSupportFragment {
     private ClassPresenterSelector mPresenterSelector;
 
     private DetailsSupportFragmentBackgroundController mDetailsBackground;
+
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//        Admob.setup(requireActivity().findViewById(R.id.adView));
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

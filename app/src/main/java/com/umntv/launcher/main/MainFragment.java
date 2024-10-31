@@ -1,11 +1,9 @@
 package com.umntv.launcher.main;
 
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
@@ -60,9 +58,7 @@ import com.umntv.launcher.main.row.utilities.Utilities;
 import com.umntv.launcher.main.row.utilities.UtilitiesCard;
 import com.umntv.launcher.service.AccessService;
 import com.umntv.launcher.util.Admob;
-import com.umntv.launcher.util.AndroidStore;
 import com.umntv.launcher.util.Preference;
-import com.umntv.launcher.util.ToastHelpers;
 import com.umntv.launcher.util.view.dialog.ApkUtil;
 
 import java.util.List;
@@ -101,7 +97,6 @@ public class MainFragment extends BrowseSupportFragment {
         setupUIElements();
         loadRows();
         setupEventListeners();
-        Admob.setup(requireActivity().findViewById(R.id.adView));
     }
 
     @Override
@@ -115,6 +110,8 @@ public class MainFragment extends BrowseSupportFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+//        Admob.setup(requireActivity().findViewById(R.id.adView));
 
         linkUIElements();
 

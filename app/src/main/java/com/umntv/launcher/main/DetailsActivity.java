@@ -6,6 +6,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.umntv.launcher.util.Admob;
+
 import media.umn.tv.R;
 
 public class DetailsActivity extends FragmentActivity {
@@ -15,6 +17,8 @@ public class DetailsActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        Admob.setup(findViewById(R.id.adView));
 
         if (savedInstanceState == null) {
             try {

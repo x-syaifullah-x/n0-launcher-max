@@ -4,7 +4,11 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.umntv.launcher.main.base.ApkData;
 import com.umntv.launcher.main.base.BaseDetailFragment;
@@ -18,12 +22,12 @@ public class UmnRetroDetailFragment extends BaseDetailFragment {
         super(DataSource.items);
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        Admob.setup(requireActivity().findViewById(R.id.adView));
-    }
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//        Admob.setup(requireActivity().findViewById(R.id.adView));
+//    }
 
     @Override
     protected void onActionClickListener(OverviewItem overviewItem) {

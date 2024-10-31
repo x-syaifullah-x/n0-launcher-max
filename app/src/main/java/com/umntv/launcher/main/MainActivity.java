@@ -5,9 +5,23 @@ import android.os.Bundle;
 
 import androidx.fragment.app.FragmentActivity;
 
+import com.applovin.sdk.AppLovinMediationProvider;
+import com.applovin.sdk.AppLovinSdk;
+import com.applovin.sdk.AppLovinSdkInitializationConfiguration;
+import com.umntv.launcher.util.Admob;
+
+import java.util.List;
+
+import media.umn.tv.BuildConfig;
 import media.umn.tv.R;
 
 public class MainActivity extends FragmentActivity {
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Admob.setup(findViewById(R.id.adView));
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -15,13 +29,17 @@ public class MainActivity extends FragmentActivity {
 
         setContentView(R.layout.activity_main);
 
+        Admob.setup(findViewById(R.id.adView));
+
+//        Admob.setup(findViewById(R.id.adView));
+
+//        JSONObject consentObject = new JSONObject();
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.main_browse_fragment, new MainFragment())
                     .commitNow();
         }
-
-//        JSONObject consentObject = new JSONObject();
 //        try {
 //            // Provide correct consent value to sdk which is obtained by User
 //            consentObject.put(InMobiSdk.IM_GDPR_CONSENT_AVAILABLE, true);

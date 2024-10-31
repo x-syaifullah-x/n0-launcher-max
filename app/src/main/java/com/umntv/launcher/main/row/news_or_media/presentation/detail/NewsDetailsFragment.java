@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +34,7 @@ import com.umntv.launcher.main.MainActivity;
 import com.umntv.launcher.main.row.news_or_media.domain.model.NewsMediaModel;
 import com.umntv.launcher.main.row.news_or_media.data.repository.NewsOrMediaRepository;
 import com.umntv.launcher.play.PlayActivity;
+import com.umntv.launcher.util.Admob;
 import com.umntv.launcher.util.Convert;
 
 import java.util.ArrayList;
@@ -52,6 +54,13 @@ public class NewsDetailsFragment extends DetailsSupportFragment {
     private ClassPresenterSelector mPresenterSelector;
 
     private DetailsSupportFragmentBackgroundController mDetailsBackground;
+
+//    @Override
+//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+//        super.onViewCreated(view, savedInstanceState);
+//
+//        Admob.setup(requireActivity().findViewById(R.id.adView));
+//    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

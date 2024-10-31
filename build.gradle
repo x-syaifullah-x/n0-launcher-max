@@ -7,7 +7,6 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$vGradle"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$vKotlin"
-        // classpath "com.google.gms:google-services:$vComGoogleGmsGoogleServices"
     }
 
     subprojects {
@@ -166,6 +165,14 @@ buildscript {
                         details.useVersion "$vComGoogleAndroidGmsPlayServicesTasks"
                     }
                 }
+                if (details.requested.group == "com.google.android.datatransport") {
+                    if ("${details.requested}".contains("transport-api")) {
+                        details.useVersion "$vComGoogleAndroidDatatransportApi"
+                    }
+                    if ("${details.requested}".contains("play-services-tasks")) {
+                        details.useVersion "$vComGoogleAndroidGmsPlayServicesTasks"
+                    }
+                }
                 if (details.requested.group == "com.google.code.findbugs") {
                     if ("${details.requested}".contains("jsr305")) {
                         details.useVersion "$vComGoogleCodeFindbugsJsr305"
@@ -174,6 +181,11 @@ buildscript {
                 if (details.requested.group == "com.google.errorprone") {
                     if ("${details.requested}".contains("error_prone_annotations")) {
                         details.useVersion "$vComGoogleErrorProneAnnotations"
+                    }
+                }
+                if (details.requested.group == "com.google.protobuf") {
+                    if ("${details.requested}".contains("protobuf-javalite")) {
+                        details.useVersion "$vComGoogleProtobufJavaLite"
                     }
                 }
                 if (details.requested.group == "org.jetbrains") {
@@ -186,34 +198,16 @@ buildscript {
     }
 }
 
-plugins {
-    id "com.google.devtools.ksp" version "$vKsp" apply false
-}
+//plugins {
+//    id "com.google.devtools.ksp" version "$vKsp" apply false
+//}
 
 addRepos(repositories)
 
 allprojects {
     addRepos(repositories)
-
-//    String userName = System.getProperty("user.name")
-//    if (userName == "xxx") {
-//        String userHomeDir = System.getProperty("user.home")
-//        String userCacheDir = "${userHomeDir}/.cache"
-//        boolean projectInCacheDir = projectDir.path.contains(userCacheDir)
-//        if (!projectInCacheDir) {
-//            buildDir = "${userCacheDir}/android/studio/project/${rootProject.name}/${project.name}/build"
-//        }
-//    }
-
-    // handle warning This class can only be used with the compiler argument "-opt-in=kotlin.RequiresOptIn"
-//    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile)
-//            .configureEach {
-//                kotlinOptions {
-//                    freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
-//                }
-//            }
 }
 
 tasks.register("clean", Delete) {
-    delete rootProject.buildDir
+    it.delete rootProject.layout.buildDirectory
 }

@@ -17,10 +17,10 @@ public final class Ads {
         if (list.isEmpty()) {
             String[] subTitle = {
                     null,
-                    null,
                     "globalgirlsinc.net",
                     null,
                     "About The DALE...",
+                    null,
                     ""
             };
             String[] title = {
@@ -32,10 +32,11 @@ public final class Ads {
             };
             String[] description = {
                     "Advertise your business for as little as $5 per month",
-                    "Grow your business by placing your ads on our platform for as little as $5 a month.\nUsers will have a direct link to your information or content.\nContact us support@umntv.com",
-                    "Create your own brands from your ideas, or assemble your brands from already created products.\nMobile phone application. Electronic device, software development, global Marketing\nconsulting and tools. Global girls inc is for businesses that`s ready to create their brands\nand or launch their products and services globally.\nglobalgirlsinc.net",
+                    "Grow your business by placing your ads on our platform for as little as $5 a month.\nUsers will have a direct link to your information or content.\nContact us objioamaurys@yahoo.com",
                     "Platinum Staffing, Inc. is a full service, staffing agency that has trained and certified recruiters\nthat are specialists in their respective fields. We staff manufacturing machining. IT, medical,\nexecutive level, engineering, administration and more.\n\nPhone: 1(763) 560-8430 中国人 EXT. 300'",
+//                    "Create your own brands from your ideas, or assemble your brands from already created products.\nMobile phone application. Electronic device, software development, global Marketing\nconsulting and tools. Global girls inc is for businesses that`s ready to create their brands\nand or launch their products and services globally.\nglobalgirlsinc.net",
                     "The DALE fully meets the needs of creating professional images for individual and businesses:\n\t\t1.Book models to take pictures, record video reviews, promotional videos or attend events\n\t\t2.Multi-style photography and filming studio for rent\n\t\t3.Artistic photography, fashion photography, product photos,.\nthedalestudios.com | Phone: 0941051990",
+                    "",
                     ""
             };
             String[] cardImageUrl = {

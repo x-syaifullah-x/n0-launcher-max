@@ -5,6 +5,10 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 
+import com.umntv.launcher.util.Admob;
+
+import media.umn.tv.R;
+
 public class AdsDetailsActivity extends FragmentActivity {
 
     public static final String ITEM = "Item";
@@ -13,6 +17,10 @@ public class AdsDetailsActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
+        Admob.setup(findViewById(R.id.adView));
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
